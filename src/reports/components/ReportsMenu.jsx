@@ -73,6 +73,12 @@ const ReportsMenu = () => {
           link="/replay"
           icon={<RouteIcon />}
         />
+        <MenuItem
+          title={t('milesPerState')}
+          link="/reports/miles"
+          icon={<TimelineIcon />}
+          selected={location.pathname === '/reports/miles'}
+        />
       </List>
       <Divider />
       <List>

@@ -60,6 +60,7 @@ import EmulatorPage from './other/EmulatorPage';
 import Loader from './common/components/Loader';
 import { generateLoginToken } from './common/components/NativeInterface';
 import { useLocalization } from './common/components/LocalizationProvider';
+import MilesPerState from './reports/MilesPerState';
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -176,6 +177,7 @@ const Navigation = () => {
           <Route path="scheduled" element={<ScheduledPage />} />
           <Route path="statistics" element={<StatisticsPage />} />
           <Route path="logs" element={<LogsPage />} />
+          <Route path="miles" element={<MilesPerState />} />
         </Route>
       </Route>
     </Routes>
