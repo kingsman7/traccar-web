@@ -614,5 +614,6 @@
     "categoryScooter": "Scooter",
     "maintenanceStart": "Start",
     "maintenancePeriod": "Period",
-    "milesPerState": "Miles per State"
+    "milesPerState": "Miles per State",
+    "completedRoute": "Completed Route"
 }

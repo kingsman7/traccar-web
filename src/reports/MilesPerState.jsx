@@ -31,19 +31,11 @@ const MilesPerState = () => {
   const classes = useReportStyles();
   const t = useTranslation();
 
-  const positionAttributes = usePositionAttributes(t);
-
-  const devices = useSelector((state) => state.devices.items);
-
   const [available, setAvailable] = useState([]);
-  const [columns, setColumns] = usePersistedState('milesColumns', ['State', 'Chosen Route']);
+  const [columns, setColumns] = useState(['stateTitle', 'completedRoute']);
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
-
-  const onMapPointClick = useCallback((positionId) => {
-    setSelectedItem(items.find((it) => it.id === positionId));
-  }, [items, setSelectedItem]);
 
   const handleSubmit = useCatch(async ({ deviceIds, from, to, type }) => {
     const formatFrom = from.split('T')[0];
@@ -85,13 +77,14 @@ const MilesPerState = () => {
                 columns={columns}
                 setColumns={setColumns}
                 columnsArray={available}
+                rawValues
               />
             </ReportFilter>
           </div>
           <Table>
             <TableHead>
               <TableRow>
-                {columns.map((key) => (<TableCell key={key}>{positionAttributes[key]?.name || key}</TableCell>))}
+                {columns.map((key) => (<TableCell key={key}>{t(key)}</TableCell>))}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -100,7 +93,7 @@ const MilesPerState = () => {
                   <TableCell>{item.state}</TableCell>
                   <TableCell>{item.miles}</TableCell>
                 </TableRow>
-              )) : (<TableShimmer columns={columns.length + 1} startAction />)}
+              )) : (<TableShimmer columns={2} />)}
             </TableBody>
           </Table>
         </div>

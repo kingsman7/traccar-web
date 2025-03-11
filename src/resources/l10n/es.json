@@ -613,5 +613,6 @@
     "categoryScooter": "Moto",
     "maintenanceStart": "Iniciar",
     "maintenancePeriod": "Período",
-    "milesPerState": "Millas por Estado"
+    "milesPerState": "Millas por Estado",
+    "completedRoute": "Ruta Recorrida"
 }

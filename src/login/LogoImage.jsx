@@ -30,8 +30,8 @@ const LogoImage = ({ color }) => {
     }
     return <img className={classes.image} src={logo} alt="" />;
   }
-  /* return <img className={classes.image} src={LogoPng} alt="" style={{ color }} />;  */
-  return <Logo className={classes.image} style={{ color }} />;
+  return <img className={classes.image} src={LogoPng} alt="" style={{ color }} />; 
+  /* return <Logo className={classes.image} style={{ color }} />; */
 };
 
 export default LogoImage;

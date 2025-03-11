@@ -7,18 +7,18 @@ export default (server, darkMode) => ({
   background: {
     default: darkMode ? grey[900] : grey[50],
   },
-  primary: {
+ /*  primary: {
     light: '#757ce8',
     main: '#007A89',
     dark: '#002884',
     contrastText: '#fff',
-  },
-  /*primary: {
+  }, */
+  primary: {
     light: '#757ce8',
     main: '#333537',
     dark: '#002884',
     contrastText: '#fff',
-  }, */
+  },
   secondary: {
     main: validatedColor(server?.attributes?.colorSecondary) || (darkMode ? green[200] : green[800]),
   },
