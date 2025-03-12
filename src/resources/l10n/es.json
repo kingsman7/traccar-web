@@ -610,6 +610,8 @@
     "categoryTram": "Tranvía",
     "categoryTruck": "Camión",
     "categoryVan": "Furgoneta",
+    "categoryReefer": "Refrigerado",
+    "categoryFlatbed": "Plataforma",
     "categoryScooter": "Moto",
     "maintenanceStart": "Iniciar",
     "maintenancePeriod": "Período",

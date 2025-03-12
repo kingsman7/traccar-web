@@ -611,6 +611,8 @@
     "categoryTram": "Tram",
     "categoryTruck": "Truck",
     "categoryVan": "Van",
+    "categoryReefer": "Reefer",
+    "categoryFlatbed": "Flatbed",
     "categoryScooter": "Scooter",
     "maintenanceStart": "Start",
     "maintenancePeriod": "Period",
