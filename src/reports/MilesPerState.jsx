@@ -1,36 +1,24 @@
-import React, { Fragment, useCallback, useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  IconButton, Table, TableBody, TableCell, TableHead, TableRow,
+   Table, TableBody, TableCell, TableHead, TableRow,
 } from '@mui/material';
-import GpsFixedIcon from '@mui/icons-material/GpsFixed';
-import LocationSearchingIcon from '@mui/icons-material/LocationSearching';
 import ReportFilter from './components/ReportFilter';
 import { useTranslation } from '../common/components/LocalizationProvider';
 import PageLayout from '../common/components/PageLayout';
 import ReportsMenu from './components/ReportsMenu';
-import PositionValue from '../common/components/PositionValue';
 import ColumnSelect from './components/ColumnSelect';
-import usePositionAttributes from '../common/attributes/usePositionAttributes';
 import { useCatch } from '../reactHelper';
-import MapView from '../map/core/MapView';
-import MapRoutePath from '../map/MapRoutePath';
-import MapRoutePoints from '../map/MapRoutePoints';
-import MapPositions from '../map/MapPositions';
 import useReportStyles from './common/useReportStyles';
 import TableShimmer from '../common/components/TableShimmer';
-import MapCamera from '../map/MapCamera';
-import MapGeofence from '../map/MapGeofence';
 import scheduleReport from './common/scheduleReport';
-import MapScale from '../map/MapScale';
-import usePersistedState from '../common/util/usePersistedState';
 
 const MilesPerState = () => {
   const navigate = useNavigate();
   const classes = useReportStyles();
   const t = useTranslation();
-
+  /* const API_URL = 'http://tts.transtechsolutions.io:4000/services/reports/miles-per-state'; */
+  const API_URL = 'http://api.2broeld.com:4000/services/reports/miles-per-state';
   const [available, setAvailable] = useState([]);
   const [columns, setColumns] = useState(['stateTitle', 'completedRoute']);
   const [items, setItems] = useState([]);
@@ -38,23 +26,28 @@ const MilesPerState = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleSubmit = useCatch(async ({ deviceIds, from, to, type }) => {
+
     const formatFrom = from.split('T')[0];
     const formatTo = to.split('T')[0];
     const queryString = `vehicleId=${deviceIds.join(',')}&startDate=${formatFrom}&endDate=${formatTo}`;
-    setLoading(true);
-    try {
-      const response = await fetch(`http://tts.transtechsolutions.io:4000/services/reports/miles-per-state?${queryString}`, {
-        headers: { Accept: 'application/json' },
-      });
-      if (response.ok) {
-        const responseData = await response.json();
-        const data = Object.entries(responseData).map(([key, value]) => ({state: key, miles: value}));
-        setItems(data);
-      } else {
-        throw Error(await response.text());
+    if (type === 'export') {
+      window.location.assign(`${API_URL}/export/excel?${queryString}`);
+    } else {
+      setLoading(true);
+      try {
+        const response = await fetch(`${API_URL}?${queryString}`, {
+          headers: { Accept: 'application/json' },
+        });
+        if (response.ok) {
+          const responseData = await response.json();
+          const data = Object.entries(responseData).map(([key, value]) => ({state: key, miles: value}));
+          setItems(data);
+        } else {
+          throw Error(await response.text());
+        }
+      } finally {
+        setLoading(false);
       }
-    } finally {
-      setLoading(false);
     }
   });
 

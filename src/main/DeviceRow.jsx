@@ -18,7 +18,7 @@ import {
   formatAlarm, formatBoolean, formatPercentage, formatStatus, getStatusColor,
 } from '../common/util/formatter';
 import { useTranslation } from '../common/components/LocalizationProvider';
-import { mapIconKey, mapIcons, mapIconsOffline } from '../map/core/preloadImages';
+import { mapIconKey, mapIcons, mapIconsOffline, mapIconsStatic } from '../map/core/preloadImages';
 import { useAdministrator } from '../common/util/permissions';
 import EngineIcon from '../resources/images/data/engine.svg?react';
 import { useAttributePreference } from '../common/util/preferences';
@@ -28,8 +28,9 @@ dayjs.extend(relativeTime);
 const useStyles = makeStyles((theme) => ({
   icon: {
     width: '100%',
-    /* height: '25px', */
-    /* filter: 'brightness(0) invert(1)', */
+    /* width: '25px',
+    height: '25px',
+    filter: 'brightness(0) invert(1)', */
   },
   batteryText: {
     fontSize: '0.75rem',
@@ -77,7 +78,6 @@ const DeviceRow = ({ data, index, style }) => {
       </>
     );
   };
-console.log('item ==>', item.status);
   return (
     <div style={style}>
       <ListItemButton

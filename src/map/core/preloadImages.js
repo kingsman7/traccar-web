@@ -75,7 +75,56 @@ import tram_static from '../../resources/images/icon/tram_static.png';
 import truck_static from '../../resources/images/icon/truck_static.png';
 import van_static from '../../resources/images/icon/van_static.png';
 import reefer_static from '../../resources/images/icon/reefer_static.png';
+/*svg*/
+import animal from '../../resources/images/icon/animal.svg';
+import bicycle from '../../resources/images/icon/bicycle.svg';
+import boat from '../../resources/images/icon/boat.svg';
+import bus from '../../resources/images/icon/bus.svg';
+import car from '../../resources/images/icon/car.svg';
+import camper from '../../resources/images/iconLegacy/camper.svg';
+import crane from '../../resources/images/icon/crane.svg';
+import default_svg from '../../resources/images/icon/default.svg';
+import start from '../../resources/images/iconLegacy/start.svg';
+import finish from '../../resources/images/iconLegacy/finish.svg';
+import helicopter from '../../resources/images/icon/helicopter.svg';
+import motorcycle from '../../resources/images/icon/motorcycle.svg';
+import person from '../../resources/images/icon/person.svg';
+import plane from '../../resources/images/icon/plane.svg';
+import scooter from '../../resources/images/icon/scooter.svg';
+import ship from '../../resources/images/icon/ship.svg';
+import tractor from '../../resources/images/icon/tractor.svg';
+import trailer from '../../resources/images/iconLegacy/trailer.svg';
+import train from '../../resources/images/icon/train.svg';
+import tram from '../../resources/images/icon/tram.svg';
+import truck from '../../resources/images/icon/truck.svg';
+import van from '../../resources/images/icon/van.svg';
+import reefer from '../../resources/images/icon/truck.svg';
 
+export const mapIconsSvg = {
+  animal: animal,
+  bicycle: bicycle,
+  boat: boat,
+  bus: bus,
+  car: car,
+  camper: camper,
+  crane: crane,
+  default: default_svg,
+  finish: finish,
+  helicopter: helicopter,
+  motorcycle: motorcycle,
+  person: person,
+  plane: plane,
+  reefer:reefer,
+  scooter: scooter,
+  ship: ship,
+  start: start,
+  tractor: tractor,
+  trailer: trailer,
+  train: train,
+  tram: tram,
+  truck: truck,
+  van: van,
+};
 export const mapIcons = {
   animal: animal_online,
   bicycle: bicycle_online,
@@ -160,7 +209,7 @@ export const mapIconKey = (category) => {
     case 'trolleybus':
       return 'bus';
     default:
-      return mapIcons.hasOwnProperty(category) ? category : 'default';
+      return mapIconsSvg.hasOwnProperty(category) ? category : 'default';
   }
 };
 
