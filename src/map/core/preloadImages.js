@@ -100,7 +100,7 @@ import truck from '../../resources/images/icon/truck.svg';
 import van from '../../resources/images/icon/van.svg';
 import reefer from '../../resources/images/icon/truck.svg';
 
-export const mapIconsSvg = {
+export const mapIcons = {
   animal: animal,
   bicycle: bicycle,
   boat: boat,
@@ -125,7 +125,7 @@ export const mapIconsSvg = {
   truck: truck,
   van: van,
 };
-export const mapIcons = {
+export const mapIconsOnline = {
   animal: animal_online,
   bicycle: bicycle_online,
   boat: boat_online,
@@ -209,7 +209,7 @@ export const mapIconKey = (category) => {
     case 'trolleybus':
       return 'bus';
     default:
-      return mapIconsSvg.hasOwnProperty(category) ? category : 'default';
+      return mapIcons.hasOwnProperty(category) ? category : 'default';
   }
 };
 

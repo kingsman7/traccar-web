@@ -18,7 +18,7 @@ import {
   formatAlarm, formatBoolean, formatPercentage, formatStatus, getStatusColor,
 } from '../common/util/formatter';
 import { useTranslation } from '../common/components/LocalizationProvider';
-import { mapIconKey, mapIcons, mapIconsOffline, mapIconsStatic } from '../map/core/preloadImages';
+import { mapIconKey, mapIconsOffline, mapIconsStatic, mapIconsOnline } from '../map/core/preloadImages';
 import { useAdministrator } from '../common/util/permissions';
 import EngineIcon from '../resources/images/data/engine.svg?react';
 import { useAttributePreference } from '../common/util/preferences';
@@ -92,7 +92,7 @@ const DeviceRow = ({ data, index, style }) => {
             </Avatar>
           ) : item.status === 'online' ? (
             <Avatar sx={{ bgcolor: 'transparent' }}>
-              <img className={classes.icon} src={mapIcons[mapIconKey(item.category)]} alt="" />
+              <img className={classes.icon} src={mapIconsOnline[mapIconKey(item.category)]} alt="" />
             </Avatar>
           ) : (
             <Avatar sx={{ bgcolor: 'transparent' }}>
