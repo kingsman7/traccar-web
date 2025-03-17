@@ -22,8 +22,12 @@ import Loader from '../common/components/Loader';
 
 const useStyles = makeStyles((theme) => ({
   options: {
+    position: 'fixed',
+    top: theme.spacing(2),
+    right: theme.spacing(2),
     display: 'flex',
-    flex: 1,
+    flexDirection: 'row',
+    gap: theme.spacing(1),
   },
   container: {
     display: 'flex',
@@ -127,7 +131,29 @@ const LoginPage = () => {
 
   return (
     <LoginLayout>
-      
+      <div className={classes.options}>
+        {nativeEnvironment && changeEnabled && (
+          <Tooltip title={t('settingsServer')}>
+            <IconButton onClick={() => navigate('/change-server')}>
+              <LockOpenIcon />
+            </IconButton>
+          </Tooltip>
+        )}
+        {languageEnabled && (
+          <FormControl>
+            <Select value={language} onChange={(e) => setLanguage(e.target.value)}>
+              {languageList.map((it) => (
+                <MenuItem key={it.code} value={it.code}>
+                  <Box component="span" sx={{ mr: 1 }}>
+                    <ReactCountryFlag countryCode={it.country} svg />
+                  </Box>
+                  {it.name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
+      </div>
       <div className={classes.container}>
         {useMediaQuery(theme.breakpoints.down('lg')) && <LogoImage color={theme.palette.primary.main} />}
         <TextField
@@ -163,29 +189,6 @@ const LoginPage = () => {
             onChange={(e) => setCode(e.target.value)}
           />
         )}
-        {<div className={classes.options}>
-          {nativeEnvironment && changeEnabled && (
-            <Tooltip title={t('settingsServer')}>
-              <IconButton onClick={() => navigate('/change-server')}>
-                <LockOpenIcon />
-              </IconButton>
-            </Tooltip>
-          )}
-          {languageEnabled && (
-            <FormControl>
-              <Select value={language} onChange={(e) => setLanguage(e.target.value)}>
-                {languageList.map((it) => (
-                  <MenuItem key={it.code} value={it.code}>
-                    <Box component="span" sx={{ mr: 1 }}>
-                      <ReactCountryFlag countryCode={it.country} svg />
-                    </Box>
-                    {it.name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
-          )}
-        </div>}
         <Button
           onClick={handlePasswordLogin}
           type="submit"

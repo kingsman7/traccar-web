@@ -616,5 +616,7 @@
     "maintenanceStart": "Iniciar",
     "maintenancePeriod": "Período",
     "milesPerState": "Millas por Estado",
-    "completedRoute": "Ruta Recorrida"
+    "completedRoute": "Completed Route",
+    "dateTime": "Fecha y Hora",
+    "fuelRemaining": "Combustible Restante"
 }

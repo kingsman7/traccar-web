@@ -15,6 +15,7 @@ import { useLocation } from 'react-router-dom';
 import { useTranslation } from '../../common/components/LocalizationProvider';
 import { useAdministrator, useRestriction } from '../../common/util/permissions';
 import MenuItem from '../../common/components/MenuItem';
+import { LocalGasStation } from '@mui/icons-material';
 
 const ReportsMenu = () => {
   const t = useTranslation();
@@ -79,6 +80,13 @@ const ReportsMenu = () => {
           icon={<TimelineIcon />}
           selected={location.pathname === '/reports/miles'}
         />
+        <MenuItem
+          title={t('positionFuel')}
+          link="/reports/fuel"
+          icon={<LocalGasStation />}
+          selected={location.pathname === '/reports/fuel'}
+        />
+        
       </List>
       <Divider />
       <List>
