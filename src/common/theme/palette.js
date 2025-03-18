@@ -15,7 +15,7 @@ export default (server, darkMode) => ({
   }, */
   primary: {
     light: '#757ce8',
-    main: '#09090b',
+    main: '#333333',
     dark: '#002884',
     contrastText: '#fff',
   },
