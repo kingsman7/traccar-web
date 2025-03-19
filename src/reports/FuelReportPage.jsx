@@ -17,8 +17,7 @@ const FuelReportPage = () => {
   const navigate = useNavigate();
   const classes = useReportStyles();
   const t = useTranslation();
-  /* const API_URL = 'http://tts.transtechsolutions.io:4000/services/reports/miles-per-state'; */
-  const API_URL = 'http://api.2broeld.com:4000/services/reports/fuel';
+  const API_URL = 'http://tts.transtechsolutions.io:4000/services/reports/miles-per-state';
   const [available, setAvailable] = useState([]);
   const [columns, setColumns] = useState(['dateTime', 'fuelRemaining']);
   const [items, setItems] = useState([]);

@@ -79,12 +79,14 @@ const ReportsMenu = () => {
           link="/reports/miles"
           icon={<TimelineIcon />}
           selected={location.pathname === '/reports/miles'}
+          disabled
         />
         <MenuItem
           title={t('positionFuel')}
           link="/reports/fuel"
           icon={<LocalGasStation />}
           selected={location.pathname === '/reports/fuel'}
+          disabled
         />
         
       </List>

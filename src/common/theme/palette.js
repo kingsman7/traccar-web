@@ -7,15 +7,9 @@ export default (server, darkMode) => ({
   background: {
     default: darkMode ? grey[900] : grey[50],
   },
- /*  primary: {
-    light: '#757ce8',
-    main: '#007A89',
-    dark: '#002884',
-    contrastText: '#fff',
-  }, */
   primary: {
     light: '#757ce8',
-    main: '#09090b',
+    main: '#007A89',
     dark: '#002884',
     contrastText: '#fff',
   },

@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme, useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { makeStyles } from '@mui/styles';
-import Logo from '../resources/images/logo.svg?react';
+import Logo from '../resources/images/Transtech-SVG.svg?react';
 import LogoPng from '../resources/images/logo.png';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,8 +30,8 @@ const LogoImage = ({ color }) => {
     }
     return <img className={classes.image} src={logo} alt="" />;
   }
-  return <img className={classes.image} src={LogoPng} alt="" style={{ color }} />; 
-  /* return <Logo className={classes.image} style={{ color }} />; */
+  /* return <img className={classes.image} src={LogoPng} alt="" style={{ color }} />;  */
+  return <Logo className={classes.image} style={{ color }} />;
 };
 
 export default LogoImage;
