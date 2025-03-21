@@ -26,4 +26,8 @@ export default (t) => useMemo(() => ({
     name: t('attributeDeviceInactivityPeriod'),
     type: 'number',
   },
+  fuelCapacity: {
+    name: t('fuelCapacity'),
+    type: 'number',
+  },
 }), [t]);
