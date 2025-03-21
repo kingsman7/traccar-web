@@ -17,7 +17,7 @@ const MilesPerState = () => {
   const navigate = useNavigate();
   const classes = useReportStyles();
   const t = useTranslation();
-  const API_URL = 'http://api.toptracking.com:4000/services/reports/miles-per-state';
+  const API_URL = 'https://tts.transtechsolutions.io/api/services/reports/miles-per-state';
   const [available, setAvailable] = useState([]);
   const [columns, setColumns] = useState(['stateTitle', 'completedRoute']);
   const [items, setItems] = useState([]);

@@ -17,7 +17,7 @@ const FuelReportPage = () => {
   const navigate = useNavigate();
   const classes = useReportStyles();
   const t = useTranslation();
-  const API_URL = 'http://api.toptracking.com:4000/services/reports/fuel';
+  const API_URL = 'https://tts.transtechsolutions.io/api/services/reports/fuel';
   const [available, setAvailable] = useState([]);
   const [columns, setColumns] = useState(['dateTime', 'fuelRemaining']);
   const [items, setItems] = useState([]);
