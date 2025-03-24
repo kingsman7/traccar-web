@@ -619,5 +619,6 @@
     "milesPerState": "Miles per State",
     "completedRoute": "Completed Route",
     "dateTime": "Date / Time",
-    "fuelRemaining": "Fuel Remaining"
+    "fuelRemaining": "Fuel Remaining",
+    "fuelCapacity": "Fuel Capacity"
 }
