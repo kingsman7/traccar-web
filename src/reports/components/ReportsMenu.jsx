@@ -86,6 +86,12 @@ const ReportsMenu = () => {
           icon={<LocalGasStation />}
           selected={location.pathname === '/reports/fuel'}
         />
+        <MenuItem
+          title={t('positionFuelConsumption')}
+          link="/reports/fuel-consumption"
+          icon={<LocalGasStation />}
+          selected={location.pathname === '/reports/fuel-consumption'}
+        />
         
       </List>
       <Divider />

@@ -297,6 +297,7 @@
     "positionOutput": "Output",
     "positionBatteryLevel": "Battery Level",
     "positionFuelConsumption": "Fuel Consumption",
+    "positionFuelConsumptionResult": "Amount of fuel added to the tank in the selected period",
     "positionRfid": "RFID",
     "positionVersionFw": "Firmware Version",
     "positionVersionHw": "Hardware Version",

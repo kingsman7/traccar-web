@@ -62,6 +62,7 @@ import { generateLoginToken } from './common/components/NativeInterface';
 import { useLocalization } from './common/components/LocalizationProvider';
 import MilesPerState from './reports/MilesPerState';
 import FuelReportPage from './reports/FuelReportPage';
+import FuelConsumptionReportPage from './reports/FuelConsumptionReportPage';
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -180,6 +181,7 @@ const Navigation = () => {
           <Route path="logs" element={<LogsPage />} />
           <Route path="miles" element={<MilesPerState />} />
           <Route path="fuel" element={<FuelReportPage />} />
+          <Route path="fuel-consumption" element={<FuelConsumptionReportPage />} />
         </Route>
       </Route>
     </Routes>

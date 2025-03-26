@@ -297,6 +297,7 @@
     "positionOutput": "Salida",
     "positionBatteryLevel": "Nivel de batería",
     "positionFuelConsumption": "Consumo de combustible",
+    "positionFuelConsumptionResult": "Cantidad de combustible añadida al tanque en el período seleccionado",
     "positionRfid": "RFDI",
     "positionVersionFw": "Versión de firmware",
     "positionVersionHw": "Versión de hardware",
